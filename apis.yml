@@ -1,23 +1,58 @@
 aid: aoruibio
 name: Aoruibio
-description: 'Aoruibio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: http://aulbio.com/og.jpg
+description: Aoruibio, operating under the brand AULBIO, is a South Korean biotechnology company focused on innovative microsphere drug delivery
+  technology called EXTENNA. It provides platform services for long‑acting therapeutics, partnering with pharmaceutical firms to develop injectable,
+  long‑acting products. The company emphasizes smart manufacturing systems, R&D pipelines, and global collaborations to advance bio‑healthcare
+  solutions.
 url: https://raw.githubusercontent.com/api-evangelist/aoruibio/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-25'
 modified: '2026-09-25'
 tags:
-- Company
-apis: []
+- Biotechnology
+- Healthcare
+- Drug Delivery
+- Platform
+- South Korea
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Hosts
+  url: hosts/aoruibio-hosts.yml
+- type: DomainSecurity
+  url: security/aoruibio-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/aoruibio
+  url: https://aulbio.com
+- type: TermsOfService
+  url: https://aulbio.com/etc/agreement.html
+- type: PrivacyPolicy
+  url: https://aulbio.com/etc/privacy.html
+- type: Documentation
+  url: https://aulbio.com/main/index.html
+apis:
+- name: AULBIO API
+  description: API documentation for AULBIO platform services.
+  humanURL: https://aulbio.com/main/index.html
+  aid: aoruibio:aulbio-api
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The provider's website aulbio.com returns a JavaScript shell, preventing machine-readable extraction.
+  evidence:
+  - url: https://aulbio.com
+    status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
